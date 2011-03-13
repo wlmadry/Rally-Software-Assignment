@@ -1,0 +1,42 @@
+Rally Software Programming Assignment
+
+Title: Password Complexity Determination
+Author: William Madry
+
+The PasswordTest class has a single parameter constructor that creates a new password.
+The methods in the class check the password for complexity by looking for characters
+from four separate character classes: lower- and uppercase letters, numbers, and
+special characters.  Each method returns true if the password contains a character
+from the given character class.  Additionally, the class will check password length
+against a minimum length (given as 8 in the current implementation).
+
+The PasswordTestTester class runs 20 test strings through PasswordTest and reports
+the number of character classes detected in the string, as well as checking the
+password length, which counts as its own class.
+
+The cliPasswordTest class creates a command line interface to test a given
+password against a minimum number of required character classes.  The cli gives
+usage feedback if the command is not used properly.
+
+Example:
+
+bash-3.2$ java cliPasswordTest RallySoftware 3
+RallySoftware has lowerCase
+RallySoftware has upperCase
+RallySoftware is longEnough
+RallySoftware meets 3 password requirements
+password meets complexity requirements
+
+bash-3.2$ java cliPasswordTest '!!UrDed' 5
+!!UrDed has lowerCase
+!!UrDed has upperCase
+!!UrDed has specialChar
+!!UrDed meets 3 password requirements
+password does not meet complexity requirements
+
+bash-3.2$ java cliPasswordTest 12race4$? three
+Usage: cliPasswordTest password #
+three is not a #
+
+Note: When running from the cli, it is often helpful to enlose the password string
+in single quotes to slip special characters past the shell.
